@@ -1,4 +1,4 @@
-import 'package:calc_riverpod/widgets/arithmetic_item.dart';
+import 'package:calc_riverpod/widgets/arithmetic_card.dart';
 
 class ArithmeticAnswer {
   final int taskId;

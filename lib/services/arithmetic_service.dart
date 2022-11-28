@@ -18,7 +18,7 @@ class ArithmeticService {
     print('init arithmeticService');
   }
 
-  List<ArithmeticTask> generate({count = 98}) =>
+  List<ArithmeticTask> generate({count = 3}) =>
       List<ArithmeticTask>.generate(count, (index) => _generateItem(index));
 
   ArithmeticTask _generateItem(int id) {

@@ -11,19 +11,6 @@ class MyAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: true,
       title: const TimerWidget(),
-      actions: [
-        TextButton(
-            onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                '/finish', (Route<dynamic> route) => false),
-            style: ButtonStyle(
-              padding: MaterialStateProperty.all(
-                  const EdgeInsets.symmetric(horizontal: 20)),
-            ),
-            child: const Text(
-              'Завершить',
-              style: TextStyle(color: Colors.white),
-            ))
-      ],
     );
   }
 

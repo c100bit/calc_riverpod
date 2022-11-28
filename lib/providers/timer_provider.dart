@@ -4,8 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../utils/utils.dart';
 
-final timerProvider = StreamProvider<String>((ref) {
-  return AppTimer().timer;
+final timerProvider = StreamProvider.autoDispose<String>((ref) {
+  final timer = AppTimer();
+
+  ref.onDispose(() {
+    timer.close();
+  });
+
+  return timer.timer;
 });
 
 class AppTimer {
@@ -21,7 +27,7 @@ class AppTimer {
 
   Stream<String> get timer => _timerCtrl.stream;
 
-  dispose() {
+  close() {
     _timer.cancel();
     _timerCtrl.close();
   }
