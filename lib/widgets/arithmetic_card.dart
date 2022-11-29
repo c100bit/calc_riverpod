@@ -55,7 +55,7 @@ class ArithmeticCard extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 15),
               ElevatedButton(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(const EdgeInsets.all(20)),

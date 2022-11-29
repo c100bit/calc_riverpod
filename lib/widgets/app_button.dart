@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class StartButton extends StatelessWidget {
-  const StartButton({Key? key}) : super(key: key);
+class AppButton extends StatelessWidget {
+  final String title;
+
+  const AppButton({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +13,9 @@ class StartButton extends StatelessWidget {
         style: ButtonStyle(
           padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
         ),
-        child: const Text(
-          'Начать',
-          style: TextStyle(fontSize: 20),
+        child: Text(
+          title,
+          style: const TextStyle(fontSize: 20),
         ));
   }
 }

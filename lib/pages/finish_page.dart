@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/tasks_provider.dart';
 import '../providers/timer_provider.dart';
-import '../widgets/start_button.dart';
+import '../widgets/app_button.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class FinishPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tasks = ref.read(tasksProvider);
-    final timer = ref.watch(timerProvider);
+    final timer = ref.read(timerProvider);
 
     return Scaffold(
         body: Center(
@@ -25,10 +25,10 @@ class FinishPage extends ConsumerWidget {
                     'Ваши результаты:\n\nРешено - ${tasks.length} \nЗа - $time',
                     style: const TextStyle(fontSize: 20),
                   ),
-              loading: () => Text(''),
-              error: (err, trace) => Text('')),
+              loading: () => const Text(''),
+              error: (err, trace) => const Text('')),
           const SizedBox(height: 50),
-          const StartButton(),
+          const AppButton(title: 'Попробовать снова'),
         ],
       ),
     ));

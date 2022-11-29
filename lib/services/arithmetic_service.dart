@@ -14,11 +14,9 @@ class ArithmeticService {
     this.min = 1,
     this.max = 15,
     this.multMax = 9,
-  }) {
-    print('init arithmeticService');
-  }
+  });
 
-  List<ArithmeticTask> generate({count = 3}) =>
+  List<ArithmeticTask> generate([int count = 100]) =>
       List<ArithmeticTask>.generate(count, (index) => _generateItem(index));
 
   ArithmeticTask _generateItem(int id) {

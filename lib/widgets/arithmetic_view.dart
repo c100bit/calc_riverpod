@@ -13,7 +13,7 @@ class ArithmeticView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final taskIdx = ref.watch(currentTaskProvider);
     final taskIdxNotifier = ref.read(currentTaskProvider.notifier);
-
+    final isLastTask = taskIdx == tasks.length - 1;
     final task = tasks[taskIdx];
 
     return AnimatedSwitcher(
@@ -22,13 +22,12 @@ class ArithmeticView extends ConsumerWidget {
         return ScaleTransition(scale: animation, child: child);
       },
       child: ArithmeticCard(
-        key: ValueKey(task.id),
-        task: task,
-        onPressed: () => taskIdx < tasks.length - 1
-            ? taskIdxNotifier.state++
-            : Navigator.of(context).pushNamedAndRemoveUntil(
-                '/finish', (Route<dynamic> route) => false),
-      ),
+          key: ValueKey(task.id),
+          task: task,
+          onPressed: () => isLastTask
+              ? Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/finish', (Route<dynamic> route) => false)
+              : taskIdxNotifier.update((state) => state + 1)),
     );
   }
 }
