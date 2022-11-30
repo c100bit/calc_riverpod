@@ -12,14 +12,14 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Calc',
       routes: {
-        '/start': (context) => const StartPage(),
+        '/start': (context) => StartPage(),
         '/home': (context) => const HomePage(),
         '/finish': (context) => const FinishPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StartPage(),
+      home: StartPage(),
     );
   }
 }

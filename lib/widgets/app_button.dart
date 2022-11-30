@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   final String title;
+  final void Function() onPressed;
 
-  const AppButton({Key? key, required this.title}) : super(key: key);
+  const AppButton({
+    Key? key,
+    required this.title,
+    required this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () => Navigator.of(context)
-            .pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false),
+        onPressed: onPressed,
         style: ButtonStyle(
           padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
         ),

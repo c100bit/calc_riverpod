@@ -15,4 +15,7 @@ class ArithmeticTask {
     required this.operator,
     required this.result,
   });
+
+  @override
+  String toString() => '$operand1 $operator $operand2 = $result';
 }

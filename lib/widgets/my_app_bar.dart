@@ -10,6 +10,7 @@ class MyAppBar extends ConsumerWidget implements PreferredSizeWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
       centerTitle: true,
+      automaticallyImplyLeading: false,
       title: const TimerWidget(),
     );
   }

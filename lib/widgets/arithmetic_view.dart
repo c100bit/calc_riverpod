@@ -3,6 +3,7 @@ import 'package:calc_riverpod/providers/tasks_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../providers/timer_provider.dart';
 import 'arithmetic_card.dart';
 
 class ArithmeticView extends ConsumerWidget {
@@ -25,8 +26,8 @@ class ArithmeticView extends ConsumerWidget {
           key: ValueKey(task.id),
           task: task,
           onPressed: () => isLastTask
-              ? Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/finish', (Route<dynamic> route) => false)
+              ? Navigator.of(context).pushReplacementNamed('/finish',
+                  arguments: ref.read(timerProvider).valueOrNull)
               : taskIdxNotifier.update((state) => state + 1)),
     );
   }
