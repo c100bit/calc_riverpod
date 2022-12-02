@@ -34,7 +34,6 @@ class StartPage extends ConsumerWidget {
                   children: [
                     Text(
                       'Необходимо решить $tasksCount примеров.\n'
-                      'Запустится таймер.\n'
                       'Можно использовать клавишу Enter\n',
                       style: const TextStyle(fontSize: 20, height: 1.5),
                       textAlign: TextAlign.center,

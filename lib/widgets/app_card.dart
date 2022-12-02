@@ -24,13 +24,13 @@ class AppCard extends StatelessWidget {
         height: height,
         child: Card(
             child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 child,
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 AppButton(title: btnTitle, onPressed: onPressed),
               ]),
         )),
